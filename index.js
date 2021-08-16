@@ -32,7 +32,7 @@ console.log(processFirstItem(['foo','bar'],function(str){return str+str}));
   2. Which of the two uses a closure? How can you tell? A closure is used in counter1 where the 'let count = 0;' variable is referenced from inside of the counterMaker function to form a closure.
   
   3. In what scenario would the counter1 code be preferable? In what scenario would 
-     counter2 be better?  
+     counter2 be better?  I am not sure, I had thought counter1 was good coding and that counter2 was considered bad coding even though functional.
 */
 
 // counter1 code
@@ -159,7 +159,7 @@ function scoreboard(getInningScorecb, inningcb, num1) {
   let awayScore = 0;
 
   for(let i = 0; i < num1; i++){
-    currentScore = getInningScorecb(inningcb);
+    const currentScore = getInningScorecb(inningcb);
     homeScore = homeScore + currentScore.Home;
     awayScore = awayScore +currentScore.Away;
     inningEnd.push(`Inning ${i+1}: Away ${currentScore.Away} - ${currentScore.Home}`);
